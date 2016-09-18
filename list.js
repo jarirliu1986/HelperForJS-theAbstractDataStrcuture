@@ -7,6 +7,8 @@ function List() {
 	this.append = append; // adding an element to a list
 	this.find = find; 	  // find an ele and return the index , if no return -1
 	this.remove = remove; //remove an element from a list
+
+	this.print = print; //print the element in the list
 }
 
 function append(element) {
@@ -22,8 +24,18 @@ function find(element) {
 	return -1;
 }
 
-function remove(argument) {
-	// body...
+function remove(element) {
+	var foundAt = this.find(element);
+	if (foundAt > -1) {
+		this.dataStore.splice(foundAt, 1);
+		--this.listSize;
+		return true;
+	}
+	return false;
 }
 	
-
+function print() {
+	for(var i=0; i < this.listSize; i++){
+		console.log(this.dataStore[i]);
+	}
+}

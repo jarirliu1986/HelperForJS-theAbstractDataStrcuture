@@ -5,9 +5,13 @@
 	<script type="text/javascript" src="list.js"></script>
 	<script type="text/javascript">
 		var list = new List();
-		list.append("hell0");
-		console.log(list);
-		//console.log(list.s);
+		for(var i=0; i < 5; i++){
+			list.append(i);
+		}
+
+		list.remove(3);
+		list.print();
+		//console.log(list);
 	</script>
 </head>
 <body>

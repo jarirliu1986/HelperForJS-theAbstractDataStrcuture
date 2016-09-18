@@ -7,8 +7,13 @@ function List() {
 	this.append = append; // adding an element to a list
 	this.find = find; 	  // find an ele and return the index , if no return -1
 	this.remove = remove; //remove an element from a list
+	this.length = length; // return the length of the list
 
 	this.print = print; //print the element in the list
+}
+
+function length(){
+	return this.listSize;
 }
 
 function append(element) {

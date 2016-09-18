@@ -11,8 +11,59 @@ function List() {
 	this.toString = toString; // view the element in a list
 	this.insert = insert; //insert an element after one element
 	this.clear = clear; //clear all elements in the list
+	this.contain = contain; //determine if the list contains a element
+
+	this.front = front;
+	this.end = end;
+	this.prev = prev;
+	this.next = next;
+	this.currPos = currPos;
+	this.moveTo = moveTo;
+	this.getElement = getElement;
+
 
 	this.print = print; //print the element in the list
+}
+
+function front() {
+	this.pos = 0;
+}
+
+function end() {
+	this.pos = this.listSize-1;
+}
+
+function prev() {
+	if (this.pos > 0) {
+		this.pos--;
+	}
+}
+
+function next() {
+	if(this.pos < this.listSize-1){
+		this.pos--;
+	}
+}
+
+function currPos() {
+	return this.pos;
+}
+
+function moveTo(postion) {
+	this.pos = postion;
+}
+
+function getElement() {
+	return this.dataStore[this.pos];
+}
+
+function contain(element) {
+	for(var i=0; i < this.length(); i++){
+		if(element == this.dataStore[i]){
+			return true;
+		}
+	}
+	return false;
 }
 
 function clear(){

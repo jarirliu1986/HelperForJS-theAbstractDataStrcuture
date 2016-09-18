@@ -8,8 +8,13 @@ function List() {
 	this.find = find; 	  // find an ele and return the index , if no return -1
 	this.remove = remove; //remove an element from a list
 	this.length = length; // return the length of the list
+	this.toString = toString; // view the element in a list
 
 	this.print = print; //print the element in the list
+}
+
+function toString() {
+	return this.dataStore;
 }
 
 function length(){

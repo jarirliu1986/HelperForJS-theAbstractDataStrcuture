@@ -10,8 +10,16 @@ function List() {
 	this.length = length; // return the length of the list
 	this.toString = toString; // view the element in a list
 	this.insert = insert; //insert an element after one element
+	this.clear = clear; //clear all elements in the list
 
 	this.print = print; //print the element in the list
+}
+
+function clear(){
+	delete this.dataStore;
+	this.dataStore = [];
+	this.listSize = 0;
+	this.pos = 0;
 }
 
 function insert(element, after) {

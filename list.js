@@ -9,8 +9,19 @@ function List() {
 	this.remove = remove; //remove an element from a list
 	this.length = length; // return the length of the list
 	this.toString = toString; // view the element in a list
+	this.insert = insert; //insert an element after one element
 
 	this.print = print; //print the element in the list
+}
+
+function insert(element, after) {
+	var foundAt = this.find(after);
+	if (foundAt > -1) {
+		this.dataStore.splice(foundAt+1, 0, element);
+		this.listSize++;
+		return true;
+	}
+	return false;
 }
 
 function toString() {

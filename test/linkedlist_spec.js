@@ -18,8 +18,16 @@ describe("linkedlist", function () {
 		llist.insert("a","head");
 		//llist.insert("b","a");
 		llist.insert("v","a");
-
 		expect(llist.toString()).toBe("av");
-		expect(llist.hello()).toBe("hello");
+	});
+
+	it("remove",function(){
+		llist.insert("a","head");
+		llist.insert("v","a");
+		llist.insert("b","v");
+		llist.remove("v");
+		expect(llist.toString()).toBe("ab");
+		llist.remove("v");
+		expect(llist.toString()).toBe("ab");
 	});
 });

@@ -4,15 +4,30 @@ module.exports =  function LList() {
 	this.find = find;
 	this.insert = insert;
 	this.toString = toString;
-	this.hello = hello;
+	this.findPre = findPre;
+	this.remove = remove;
 }
-function hi() {
-	return "hello";
+
+function findPre(ele){
+	var currNode = this.head;
+	while(currNode.next != null){
+		if(currNode.next.element != ele){
+			currNode = currNode.next;
+		}else{
+			return currNode;
+		}
+	}
+	return null;
 }
-function hello(){
-	var a = hi();
-	return a;
+
+function remove(ele) {
+	var preNode = this.findPre(ele);
+	if(preNode != null){
+		preNode.next = preNode.next.next;
+		preNode.next.next = null;
+	}
 }
+
 function toString() {
 	var currNode = this.head;
 	var str = "";
